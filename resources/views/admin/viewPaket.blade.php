@@ -22,9 +22,9 @@
                                 <thead>
                                     <tr>
                                         <th>Paket</th>
-                                        <th>Fasilitas 1</th>
-                                        <th>Fasilitas 2</th>
-                                        <th>Fasilitas 3</th>
+                                        <th>Deskripsi</th>
+                                        <th>Fasilitas</th>
+                                        <th>Harga</th>
                                         <th>Control</th>
                                     </tr>
                                 </thead>
@@ -32,9 +32,9 @@
                                     @foreach ($paket as $isi)
                                     <tr class="odd gradeX">
                                         <td>{{$isi->paket}}</td>
-                                        <td>{{$isi->fas1}}</td>
-                                        <td>{{$isi->fas2}}</td>
-                                        <td>{{$isi->fas3}}</td>
+                                        <td>{{$isi->deskripsi}}</td>
+                                        <td>{{$isi->fasilitas}}</td>
+                                        <td>{{$isi->harga}}</td>
                                         <td>
                                             <a href="{{$isi->id}}/editPaket" class="btn btn-warning" style="width: 60px">Edit</a>
 

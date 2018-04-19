@@ -34,9 +34,35 @@ Route::delete('/{id}/delPaket', 'ControllerAdmin@deletePaket');
 Route::get('/{id}/editPaket', 'ControllerAdmin@editPaket');
 Route::put('/{id}/editPaket', 'ControllerAdmin@updatetPaket');
 
+Route::get('/slider', 'ControllerAdmin@readSlider');
+Route::get('/addSlider', 'ControllerAdmin@addSlider');
+Route::post('/inputSlider', 'ControllerAdmin@inputSlider');
+Route::delete('/{id}/delSlider', 'ControllerAdmin@deleteSlider');
+Route::get('/{id}/editSlider', 'ControllerAdmin@editSlider');
+Route::put('/{id}/editSlider', 'ControllerAdmin@updatetSlider');
+
+Route::get('/galeri', 'ControllerAdmin@readGaleri');
+Route::get('/addGaleri', 'ControllerAdmin@addGaleri');
+Route::post('/inputGaleri', 'ControllerAdmin@inputGaleri');
+Route::delete('/{id}/delGaleri', 'ControllerAdmin@deleteGaleri');
+Route::get('/{id}/editGaleri', 'ControllerAdmin@editGaleri');
+Route::put('/{id}/editGaleri', 'ControllerAdmin@updatetGaleri');
+
+Route::get('/fitur', 'ControllerAdmin@readFitur');
+Route::get('/addFitur', 'ControllerAdmin@addFitur');
+Route::post('/inputFitur', 'ControllerAdmin@inputFitur');
+Route::delete('/{id}/delFitur', 'ControllerAdmin@deleteFitur');
+Route::get('/{id}/editFitur', 'ControllerAdmin@editFitur');
+Route::put('/{id}/editFitur', 'ControllerAdmin@updatetFitur');
+
+Route::get('/plan', 'ControllerAdmin@readPlan');
+Route::get('/addPlan', 'ControllerAdmin@addPlan');
+Route::post('/inputPlan', 'ControllerAdmin@inputPlan');
+Route::delete('/{id}/delPlan', 'ControllerAdmin@deletePlan');
+Route::get('/{id}/editPlan', 'ControllerAdmin@editPlan');
+Route::put('/{id}/editPlan', 'ControllerAdmin@updatetPlan');
 //end of admin page
 
 //this is to front page
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'ControllerFront@readAbout');
+Route::get('/index', 'ControllerFront@readIndex');

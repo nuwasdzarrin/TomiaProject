@@ -25,8 +25,8 @@
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Kategori</label>
-                                            <input class="form-control" type="text" name="category" placeholder="Kategori">
+                                            <label>Penulis</label>
+                                            <input class="form-control" type="text" name="penulis" placeholder="Penulis">
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar</label>

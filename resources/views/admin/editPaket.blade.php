@@ -25,20 +25,20 @@
                                             <p class="help-block">*Paket Hemat Keluarga</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Fasilitas 1</label>
-                                            <input class="form-control" type="text" name="fas1" value="{{$paket->fas1}}" placeholder="fasilitas 1">
+                                            <label>Deskripsi</label>
+                                            <textarea name="deskripsi" class="form-control" rows="3">{{$paket->deskripsi}}</textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Fasilitas 2</label>
-                                            <input class="form-control" type="text" name="fas2" value="{{$paket->fas2}}" placeholder="fasilitas 2">
+                                            <label>Fasilitas</label>
+                                            <textarea name="fasilitas" class="form-control" rows="3">{{$paket->fasilitas}}</textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Fasilitas 3</label>
-                                            <input class="form-control" type="text" name="fas3" value="{{$paket->fas3}}" placeholder="fasilitas 3">
+                                            <label>Harga</label>
+                                            <input class="form-control" type="text" name="harga" value="{{$paket->harga}}" placeholder="harga">
                                         </div>
-                                        <button type="submit" class="btn btn-default">Save Artikel</button>
+                                        <button type="submit" class="btn btn-default">Save Paket</button>
                                         <input type="hidden" name="_method" value="PUT">
-                                        <button type="reset" class="btn btn-default">Reset Artikel</button>
+                                        <button type="reset" class="btn btn-default">Reset Paket</button>
                                     </form>
                                 </div>
                                 

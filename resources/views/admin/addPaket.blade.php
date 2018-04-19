@@ -25,16 +25,17 @@
                                             <p class="help-block">*paket hemat</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>fasilitas 1</label>
-                                            <input class="form-control" type="text" name="fas1" placeholder="Kategori">
+                                            <label>Deskripsi</label>
+                                            <textarea name="deskripsi" class="form-control" rows="3"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>fasilitas 2</label>
-                                            <input class="form-control" type="text" name="fas2" placeholder="Kategori">
+                                            <label>Fasilitas</label>
+                                            <textarea name="fasilitas" class="form-control" rows="3"></textarea>
+                                            <p class="help-block">*pisahkan dengan tanda "koma (,)" antara fasilitas</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>fasilitas 3</label>
-                                            <input class="form-control" type="text" name="fas3" placeholder="Kategori">
+                                            <label>Harga</label>
+                                            <input class="form-control" type="text" name="harga" placeholder="Harga">
                                         </div>
                                         <button type="submit" class="btn btn-default">Save Paket</button>
                                         <button type="reset" class="btn btn-default">Reset Paket</button>

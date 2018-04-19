@@ -16,9 +16,9 @@ class Paket extends Migration
         Schema::create('pakets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('paket',50);
-            $table->string('fas1');
-            $table->string('fas2');
-            $table->string('fas3');
+            $table->string('fasilitas');
+            $table->string('harga');
+            $table->string('gambar');
             $table->rememberToken();
             $table->timestamps();
         });

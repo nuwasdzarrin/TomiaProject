@@ -25,12 +25,12 @@
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Kategori</label>
-                                            <input class="form-control" type="text" name="category" value="{{$data->category}}" placeholder="Kategori">
+                                            <label>Penulis</label>
+                                            <input class="form-control" type="text" name="penulis" value="{{$data->penulis}}" placeholder="Kategori">
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar</label><br/>
-                                            <label> <img src="{{url('/uploadgambar/'.$data->gambar)}}" style="width: 150px; height:150px;"> </label><br>
+                                            <label> <img src="{{url('/uploadgambar/artikels/'.$data->gambar)}}" style="width: 150px; height:150px;"> </label><br>
                                             <label>Apakah Ingin Mengganti Gambar?</label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="options" id="optionsRadiosInline1" value="option1" checked>Tidak
@@ -38,7 +38,7 @@
                                             <label class="radio-inline">
                                                 <input type="radio" name="options" id="optionsRadiosInline2" value="option2">Ya
                                             </label>
-                                            <input type="file" name="gambar" value="{{$data->gambar}}">
+                                            <input type="file" name="gambar" value="">
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
