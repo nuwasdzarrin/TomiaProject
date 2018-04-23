@@ -345,6 +345,12 @@
 
         @yield('content')
 
+        <style type="text/css">
+                div#dataTables-example_wrapper > .row > div > .dataTables_filter, div.panel-body .dataTables_paginate {
+                    text-align: right;
+                }
+        </style>
+
     </div>
         <!-- /#wrapper -->
 
@@ -363,7 +369,7 @@
         <script src="{{ asset('adminassets/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="{{ asset('adminassets/dist/js/sb-admin-2.js"></script>
+        <script src="{{ asset('/adminassets/dist/js/sb-admin-2.js') }}"></script>
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
@@ -373,9 +379,6 @@
             });
         });
         </script>
-
-             
-
 </body>
 
 </html>

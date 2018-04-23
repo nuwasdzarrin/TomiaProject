@@ -66,3 +66,4 @@ Route::put('/{id}/editPlan', 'ControllerAdmin@updatetPlan');
 //this is to front page
 Route::get('/about', 'ControllerFront@readAbout');
 Route::get('/index', 'ControllerFront@readIndex');
+Route::get('/artikel', 'ControllerFront@readArtikel');
