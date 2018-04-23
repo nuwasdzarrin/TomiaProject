@@ -23,7 +23,7 @@
 <body>
     <nav class="sticky">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
+            <a href="{{URL::to('/index')}}" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="#artikel">Artikel</a></li>

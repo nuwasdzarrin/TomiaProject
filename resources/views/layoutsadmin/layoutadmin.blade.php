@@ -314,26 +314,18 @@
                             <a href="http://tomiaproject.oo/paket"><i class="fa fa-files-o fa-fw"></i> Paket</a>
                         </li>
                         <li>
-                            <a href="http://tomiaproject.oo/slider"><i class="fa fa-sitemap fa-fw"></i> Slider</a>
+                            <a href="http://tomiaproject.oo/slider"><i class="glyphicon-menu-left"></i><i class="fa fa-image"></i><i class="glyphicon-menu-right"></i> Slider</a>
                         </li>
                         <li>
-                            <a href="http://tomiaproject.oo/galeri"><i class="fa fa-sitemap fa-fw"></i> Galeri</a>
+                            <a href="http://tomiaproject.oo/galeri"><i class="fa fa-image"></i> Galeri</a>
                         </li>
                         <li>
-                            <a href="http://tomiaproject.oo/fitur"><i class="fa fa-sitemap fa-fw"></i> Fitur</a>
+                            <a href="http://tomiaproject.oo/fitur"><i class=" fa-folder-open"></i> Fitur</a>
                         </li>
                         <li>
-                            <a href="http://tomiaproject.oo/plan"><i class="fa fa-sitemap fa-fw"></i> Rencana</a>
+                            <a href="http://tomiaproject.oo/plan"><i class="fa-paper-plane"></i> Rencana</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> # </a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> #</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> #</a>
-                        </li>
+                        
                         
                             
                     </ul>

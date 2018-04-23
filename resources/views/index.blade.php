@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="center">
-            <a href="#" class="btn-default-effect">Lihat lebih banyak artikel</a>
+            <a href="artikel/1" class="btn-default-effect">Lihat lebih banyak artikel</a>
         </div>
     </section>
 

@@ -44,14 +44,17 @@ class ControllerFront extends Controller
         ->with('terbaru',$terbaru)
         ->with('no',1);
     }
-    function readArtikel()
+    function readArtikel($id)
     {
+        $count=artikel::count();
         $terbaru=artikel::latest()
         ->get();
         $populer=artikel::latest()
         ->get();
         return view ('/artikel')
         ->with('terbaru',$terbaru)
-        ->with('populer',$populer);
+        ->with('populer',$populer)
+        ->with('count',$count)
+        ->with('id',$id);
     }
 }
