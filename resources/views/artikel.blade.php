@@ -16,6 +16,8 @@
             <div class="col s12 m8 l8">
                 <div class="list-artikel">
                     <?php $no=1; ?>
+                    <?php $jumlah= count($terbaru);
+                    echo $terbaru?>
                     @foreach ($terbaru as $terbaru)
                     <div class="artikel-item row">
                         <div class="col s4 m4 l4">
