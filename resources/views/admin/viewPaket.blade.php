@@ -34,7 +34,8 @@
                                         <td>{{$isi->paket}}</td>
                                         <td>{{$isi->deskripsi}}</td>
                                         <td>{{$isi->fasilitas}}</td>
-                                        <td>{{$isi->harga}}</td>
+                                        <?php $harga=strrev(implode('.',str_split(strrev(strval($isi->harga)),3))); ?>
+                                        <td>{{$harga}}</td>
                                         <td>
                                             <a href="{{$isi->id}}/editPaket" class="btn btn-warning" style="width: 60px">Edit</a>
 

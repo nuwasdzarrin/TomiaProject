@@ -384,7 +384,7 @@ nav.sticky ul li a {
     font-size: 1.5em;
 }
 
-.deskripsi-paket .pesan-btn {
+.deskripsi-paket a.pesan-btn {
     background-color: transparent;
     border: 1px solid #1d98fd;
     border-radius: 200px;
@@ -395,7 +395,7 @@ nav.sticky ul li a {
     transition: background-color .3s, color .3s;
 }
 
-.deskripsi-paket .pesan-btn:hover {
+.deskripsi-paket a.pesan-btn:hover {
     color: white;
     background-color: #1d98fd;
 }

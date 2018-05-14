@@ -1,6 +1,6 @@
 @extends ('layoutsadmin/layoutadmin')
     @section ('content')
-
+    
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -8,6 +8,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -36,11 +37,11 @@
                                         <td>{{$isi->penulis}}</td>
                                         <td>{{$isi->isi}}</td>
                                         <td>
-                                            <a href="{{$isi->id}}/editArticel" class="btn btn-warning" style="width: 60px">Edit</a>
-
+                                            <a href="{{$isi->id}}/editArticel" title="Edit Artikel" class="btn btn-warning btn-md" style="margin-bottom: 8px"><i class="fa fa-pencil"></i></a>
                                             <form method="POST" action="{{$isi->id}}/delArticel">
                                                 {{csrf_field()}}
-                                                <input type="submit" name="delete" class="btn btn-danger" value="Delete">
+                                                <button type="submit" title="Hapus Artikel" class="btn btn-danger btn-md fa fa-trash-o"  style="padding: 12px;"></button>
+                                                <!-- <input type="submit" name="delete" class="btn btn-danger" value="Delete"> -->
                                                 <input type="hidden" name="_method" value="DELETE">
                                             </form>
                                         </td>
@@ -60,7 +61,5 @@
             
         </div>
         <!-- /#page-wrapper -->
-
-        
-
+    
 @endsection

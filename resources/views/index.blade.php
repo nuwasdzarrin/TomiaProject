@@ -49,7 +49,7 @@
                 </div>
                 <div class="col s12 m12 l12">
                     <img class="destinasi-favorit-img" src="{{ asset('uploadgambar/artikels/'.$terbaru->gambar) }}">
-                    <span class="judul-artikel besar">{{$terbaru->judul}}</span>
+                    <span class="judul-artikel besar"><a href="{{URL::to('/detailArtikel/'.$terbaru->id)}}">{{$terbaru->judul}}</a></span>
                     <span class="nama-penulis">{{$terbaru->penulis}}</span> - <span><?php echo substr($terbaru->updated_at, 0,10);?></span>
                     <p class="deskripsi"><?php echo substr($terbaru->isi, 0,170);?> ...</p>
                 </div>
@@ -66,7 +66,7 @@
                             <img class="gambar-artikel" src="{{ asset('uploadgambar/artikels/'.$latesArt->gambar) }}">
                         </div>
                         <div class="col s8 m8 l8">
-                            <span class="judul-artikel">{{$latesArt->judul}}</span>
+                            <span class="judul-artikel"><a href="{{URL::to('/detailArtikel/'.$latesArt->id)}}">{{$latesArt->judul}}</a></span>
                             <span class="nama-penulis">{{$latesArt->penulis}}</span> - <span><?php echo substr($latesArt->updated_at, 0,10);?></span>
                             <p><?php echo substr($latesArt->isi, 0,50);?> ...</p>
                         </div>
@@ -89,7 +89,7 @@
                             <img class="gambar-artikel" src="{{ asset('uploadgambar/artikels/'.$populer->gambar) }}">
                         </div>
                         <div class="col s8 m8 l8">
-                            <span class="judul-artikel">{{$populer->judul}}</span>
+                            <span class="judul-artikel"><a href="{{URL::to('/detailArtikel/'.$populer->id)}}">{{$populer->judul}}</a></span>
                             <span class="nama-penulis">{{$populer->penulis}}</span> - <span><?php echo substr($populer->updated_at, 0,10);?></span>
                             <p><?php echo substr($populer->isi, 0,50);?> ...</p>
                         </div>
@@ -123,7 +123,7 @@
             @endforeach
         </div>
         <div class="center">
-            <a href="#" class="btn-default-effect">Lihat galeri</a>
+            <a href="galeris" class="btn-default-effect">Lihat galeri</a>
         </div>
     </section>
 
@@ -155,7 +155,8 @@
                         <div class="paket-img-1">
                             <div class="overlay">
                                 <span class="judul-paket">{{$paket->paket}}</span>
-                                <span class="mata-uang">IDR </span><span class="harga">{{$paket->harga}}</span>
+                                <?php $harga=strrev(implode('.',str_split(strrev(strval($paket->harga)),3))); ?>
+                                <span class="mata-uang">IDR </span><span class="harga">{{$harga}}</span>
                             </div>
                         </div>
                         <div class="paket-container">
@@ -174,7 +175,7 @@
                             </div>
                         </div>
                         <div class="deskripsi-paket">
-                            <button class="pesan-btn waves-effect" type="submit">Pesan Paket</button>
+                            <a class="pesan-btn waves-effect" href="order/{{$paket->id}}">Pesan Paket</a>
                         </div>
                     </div>
                 </div>

@@ -23,12 +23,12 @@
                                     <img src="{{ asset('uploadgambar/artikels/'.$terbaru->gambar) }}" alt="">
                                 </div>
                                 <div class="col s8 m8 l8">
-                                    <h5>{{$terbaru->judul}}</h5>
+                                    <a href="{{URL::to('/detailArtikel/'.$terbaru->id)}}"><h5>{{$terbaru->judul}}</h5></a>
                                     <span>{{$terbaru->penulis}}</span> - <span><?php echo substr($terbaru->updated_at, 0,10);?></span><br/>
                                     <p class="deskripsi-singkat">
                                         <?php echo substr($terbaru->isi, 0,170);?> ...
                                     </p>
-                                    <a href="#" class="right">Read More</a>
+                                    <a href="{{URL::to('/detailArtikel/'.$terbaru->id)}}" class="right">Read More</a>
                                 </div>
                             </div>
                         @endif
@@ -54,42 +54,15 @@
                         <h5>Artikel Populer</h5>
                     </div>
                     <ul>
+                        @foreach ($populer as $populer)
                         <li>
-                            <a href="#">
-                                Lorem ipsum, dolor sit amet
-                                <br/><span>02 Januari 2018</span>
+                            <a href="{{URL::to('/detailArtikel/'.$populer->id)}}">
+                                {{$populer->judul}}
+                                <br/><span><?php echo substr($populer->updated_at, 0,10);?></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                consectetur adipisicing elit
-                                <br/><span>02 Januari 2018</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                cumque praesentium illo
-                                <br/><span>02 Januari 2018</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                voluptatem minus cum soluta asperiores
-                                <br/><span>02 Januari 2018</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Veritatis harum
-                                <br/><span>02 Januari 2018</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Quia soluta libero
-                                <br/><span>02 Januari 2018</span>
-                            </a>
-                        </li>
+                        @endforeach
+                        
                     </ul>
                 </div>
             </div>

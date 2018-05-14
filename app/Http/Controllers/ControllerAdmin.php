@@ -9,6 +9,7 @@ use App\slider;
 use App\galeri;
 use App\fitur;
 use App\plan;
+use App\order;
 
 class ControllerAdmin extends Controller
 {
@@ -42,6 +43,7 @@ class ControllerAdmin extends Controller
 
     	$siswa = new artikel($request->all());
     		$siswa->judul = $request->judul;
+            $siswa->kategori = $request->kategori;
             $siswa->isi = $request->content;
     		$siswa->penulis = $request->penulis;
     		$siswa->gambar = $namaFile;
@@ -61,7 +63,7 @@ class ControllerAdmin extends Controller
     {
         $siswa=artikel::find($id);
         $siswa->delete();
-        return redirect('/Articel');
+        return redirect('/articel');
     }
     function editArticel($id)
     {
@@ -81,6 +83,7 @@ class ControllerAdmin extends Controller
 
             $siswa = artikel::find($id);
             $siswa->judul = $request->judul;
+            $siswa->kategori = $request->kategori;
             $siswa->isi = $request->content;
             $siswa->penulis = $request->penulis;
             $siswa->gambar = $namaFile;
@@ -91,6 +94,7 @@ class ControllerAdmin extends Controller
             //echo "INI TIDAK";
             $siswa = artikel::find($id);
             $siswa->judul = $request->judul;
+            $siswa->kategori = $request->kategori;
             $siswa->isi = $request->content;
             $siswa->penulis = $request->penulis;
             
@@ -466,4 +470,25 @@ class ControllerAdmin extends Controller
         }
     }
     //plan berakhir disini
+    function pemesanan()
+    {
+        $order=order::with('joinPaket')->latest()->get();
+        // dd($order);
+        return view ('admin/pemesanan')
+        ->with ('order',$order);
+    }
+    function status(Request $request, $id)
+    {
+       $status = order::find($id);
+        $status->status = $request->status;
+        $status->save();
+
+        return redirect ('/pemesanan'); 
+    }
+    function delPemesanan($id)
+    {
+        $order=order::find($id);
+        $order->delete();
+        return redirect('/pemesanan');
+    }
 }

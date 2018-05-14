@@ -18,7 +18,7 @@
     <link href="{{ asset('adminassets/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
 
         <!-- DataTables CSS -->
-    <link href="{{ asset('adminassets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet') }}">
+    <link href="{{ asset('adminassets/vendor/datatables-plugins/dataTables.bootstrap.css') }}"  rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
     <link href="{{ asset('adminassets/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">

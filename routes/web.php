@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Auth::routes();
 
@@ -61,9 +61,20 @@ Route::post('/inputPlan', 'ControllerAdmin@inputPlan');
 Route::delete('/{id}/delPlan', 'ControllerAdmin@deletePlan');
 Route::get('/{id}/editPlan', 'ControllerAdmin@editPlan');
 Route::put('/{id}/editPlan', 'ControllerAdmin@updatetPlan');
+
+Route::get('/pemesanan', 'ControllerAdmin@pemesanan');
+Route::put('/{id}/status', 'ControllerAdmin@status');
+Route::delete('/{id}/delPemesanan', 'ControllerAdmin@delPemesanan');
 //end of admin page
 
 //this is to front page
-Route::get('/about', 'ControllerFront@readAbout');
-Route::get('/index', 'ControllerFront@readIndex');
+Route::get('/', 'ControllerFront@readIndex');
 Route::get('/artikel/{id}', 'ControllerFront@readArtikel');
+Route::get('/detailArtikel/{id}', 'ControllerFront@detailArtikel');
+Route::get('/galeris', 'ControllerFront@readGaleris');
+Route::get('/order/{id}', 'ControllerFront@order');
+Route::post('/checkout', 'ControllerFront@checkout');
+Route::get('/invoice/{idsan}/{idpak}', 'ControllerFront@invoice');
+Route::get('/invoic/{idsan}/{idpak}', 'ControllerFront@unduh');
+Route::get('/confirmation', 'ControllerFront@confirmation');
+Route::put('/postKonfirmasi', 'ControllerFront@postKonfirmasi');

@@ -22,7 +22,6 @@
                                         <div class="form-group">
                                             <label>Nama Paket</label>
                                             <input class="form-control" type="text" name="paket" value="{{$paket->paket}}">
-                                            <p class="help-block">*Paket Hemat Keluarga</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi</label>
@@ -35,6 +34,7 @@
                                         <div class="form-group">
                                             <label>Harga</label>
                                             <input class="form-control" type="text" name="harga" value="{{$paket->harga}}" placeholder="harga">
+                                            <p class="help-block">*paket hemat</p>
                                         </div>
                                         <button type="submit" class="btn btn-default">Save Paket</button>
                                         <input type="hidden" name="_method" value="PUT">

@@ -25,6 +25,15 @@
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
+                                            <label>Kategori</label>
+                                            <select name="kategori" class="form-control" style="width: 35%;">
+                                                <option value="0" selected="selected">General</option>
+                                                <option value="1">Desa Dete</option>
+                                                <option value="2">Desa Tiroau</option>
+                                                <option value="3">Desa Kulati</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Penulis</label>
                                             <input class="form-control" type="text" name="penulis" value="{{$data->penulis}}" placeholder="Kategori">
                                         </div>

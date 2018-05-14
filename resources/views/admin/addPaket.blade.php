@@ -22,7 +22,6 @@
                                         <div class="form-group">
                                             <label>Nama Paket</label>
                                             <input class="form-control" type="text" name="paket">
-                                            <p class="help-block">*paket hemat</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi</label>
@@ -36,6 +35,7 @@
                                         <div class="form-group">
                                             <label>Harga</label>
                                             <input class="form-control" type="text" name="harga" placeholder="Harga">
+                                            <p class="help-block">*Masukkan harga tanpa pemisah "." Ex: 500000</p>
                                         </div>
                                         <button type="submit" class="btn btn-default">Save Paket</button>
                                         <button type="reset" class="btn btn-default">Reset Paket</button>

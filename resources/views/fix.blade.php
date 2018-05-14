@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/f56e4513c5.js"></script>
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/ionicons/ionicons.min.css') }}">
@@ -19,18 +20,21 @@
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/page-header.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/artikel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsnya/styles/galeri.css') }}">
+    <!--  -->
+    
 </head>
 <body>
     <nav class="sticky">
         <div class="nav-wrapper">
-            <a href="{{URL::to('/index')}}" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
+            <a href="{{URL::to('/')}}" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#artikel">Artikel</a></li>
-                <li><a href="#galeri">Galeri</a></li>
-                <li><a href="#rencana-wisata">Rencana Wisata</a></li>
-                <li><a href="#paket-wisata">Paket Wisata</a></li>
-                <li><a href="#peta">Destinasi Wisata</a></li>
+                <li><a href="{{URL::to('/#artikel')}}">Artikel</a></li>
+                <li><a href="{{URL::to('/#galeri')}}">Galeri</a></li>
+                <li><a href="{{URL::to('/#rencana-wisata')}}">Rencana Wisata</a></li>
+                <li><a href="{{URL::to('/#paket-wisata')}}">Paket Wisata</a></li>
+                <li><a href="{{URL::to('/#peta')}}">Destinasi Wisata</a></li>
             </ul>
         </div>
     </nav>
