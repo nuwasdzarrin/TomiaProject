@@ -177,6 +177,16 @@
         </div>
     </div>
 
+    <section id="rencana-wisata" class="center">
+        <div class="container">
+            <h2>Video</h2>
+            <div class="row horizontal-list">
+                <iframe width="978" height="550" src="https://www.youtube.com/embed/WmR0HWZi2_I" frameborder="2" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/channel/UCzQ_VCZY4_Bnw5FFXiSC_rQ" class="btn-default-effect btn-inverse">Kunjungi Channel Kami di Youtube</a>
+        </div>
+    </section>
+
     <div id="peta">
         <div class="container row">
             <div class="deskripsi-peta col s12 m6 l6">
