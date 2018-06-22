@@ -3,80 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\artikel;
+use Illuminate\Support\Facades\Mail;
 use App\paket;
-use App\slider;
-use App\fitur;
-use App\galeri;
-use App\plan;
 use App\order;
 use PDF;
 
-class ControllerFront extends Controller
+class CF_invoice extends Controller
 {
-    function detailArtikel($id)
-    {
-        $artikel=artikel::where('id','=',$id)
-        ->first();
-        $terbaru=artikel::latest()->limit(4)
-        ->get();
-        $populer=artikel::orderBy('pengunjung','desc')->limit(7)
-        ->get();
-        $temp=artikel::find($id);
-        $temp->pengunjung=$artikel->pengunjung+1;
-        $temp->save();
-        return view ('detail_artikel')
-        ->with ('artikel',$artikel)
-        ->with('terbaru',$terbaru)
-        ->with('populer',$populer);
-    }
-    function readIndex()
-    {
-    	$slider=slider::all();
-        $paket=paket::all();
-        $fitur=fitur::all();
-        $galeri=galeri::latest()
-        ->get();
-        $plan=plan::all();
-        $latestArt=artikel::latest()
-        ->get();
-        $populer=artikel::orderBy('pengunjung','desc')
-        ->get();
-        $terbaru=artikel::latest()
-        ->first();
-        return view ('index')
-        ->with ('paket',$paket)
-        ->with ('slider',$slider)
-        ->with ('fitur',$fitur)
-        ->with ('galeri',$galeri)
-        ->with ('plan',$plan)
-        ->with('latesArt',$latestArt)
-        ->with('populer',$populer)
-        ->with('terbaru',$terbaru)
-        ->with('no',1);
-    }
-    function readArtikel($id)
-    {
-        $count=artikel::count();
-        $terbaru=artikel::latest()
-        ->get();
-        $populer=artikel::orderBy('pengunjung','desc')->limit(7)
-        ->get();
-        return view ('/artikel')
-        ->with('terbaru',$terbaru)
-        ->with('populer',$populer)
-        ->with('count',$count)
-        ->with('id',$id);
-    }
-    function readGaleris()
-    {
-        $count=galeri::count();
-        $terbaru=galeri::latest()
-        ->get();
-        return view ('/galeris')
-        ->with('terbaru',$terbaru)
-        ->with('count',$count);
-    }
     function order($id)
     {
         $paket=paket::where('id','=',$id)->first();
@@ -104,6 +37,29 @@ class ControllerFront extends Controller
         $pesan=order::where('id_pembelian','=',$idsan)->first();
         $paket=paket::where('id','=',$idpak)->first();
         $link='invoic/'.$idsan.'/'.$idpak;
+
+        /*$data=[
+            'email'=>$pesan->email,
+            'subject'=>"Pemesanan Paket Wisata Tomia Timur",
+            'link'=>$link,
+            'booking'=>$pesan->id_pembelian,
+            'created'=>$pesan->created_at,
+            'due'=>$pesan->tgl_keberangkatan,
+            'name'=>$pesan->nama_pemesan,
+            'email'=>$pesan->email,
+            'no_hp'=>$pesan->no_hp,
+            'status'=>$pesan->status,
+            'jumlah'=>$pesan->jumlah,
+            'paket'=>$paket->paket,
+            'price'=>$paket->harga,
+        ];
+        Mail::send('Mail.mail', $data, function ($message) use ($data)
+            {
+                $message->from('projecttomia@gmail.com','admin Tomia Timur');
+                $message->to($data['email']);
+                $message->subject($data['subject']);
+            });*/
+
         return view ('/checkout')
         ->with ('pesan',$pesan)
         ->with ('paket',$paket)
@@ -114,9 +70,11 @@ class ControllerFront extends Controller
     {
         $pesan=order::where('id_pembelian','=',$idsan)->first();
         $paket=paket::where('id','=',$idpak)->first();
-        
+        /*return view('invoic');*/
         $pdf= PDF::loadView ('/invoic',compact('pesan','paket'));
-        return $pdf->download('tomia'.date("Ymd").'.pdf');
+        return $pdf->download($pesan->id_pembelian.$pesan->nama_pemesan.date("Ymd").'.pdf');
+        //stream buat ngeview gak langsung download\
+        //dowload buat ngeview langsung download
     }
     //upload bukti pembayaran
     function confirmation()

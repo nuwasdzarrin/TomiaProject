@@ -1,6 +1,7 @@
 @extends ('fix')
     @section ('content')
-
+    <link rel="stylesheet" href="{{ asset('assetsnya/styles/page-header.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsnya/styles/galeri.css') }}">
     <header id="page-header">
         <img src="{{ asset('uploadgambar/galeris/01.jpg') }}" alt="page header">
         <div class="header-overlay">
@@ -29,13 +30,11 @@
 
     <div class="pagination-div row">
         <ul class="pagination col s12 m12 l12">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            <li class="disabled"><a href="@if ($id>1) {{ $id-1 }} @endif"><i class="material-icons">chevron_left</i></a></li>
+            @for ($i=1;$i<=($count/8+1);$i++)
+            <li @if($i==$id) class="active" @else class="waves-effect" @endif ><a href="{{ $i }}">{{ $i }}</a></li>
+            @endfor
+            <li class="waves-effect"><a href="@if($id<=($count/8)) {{ $id+1 }} @endif"><i class="material-icons">chevron_right</i></a></li>
         </ul>  
     </div>
 @endsection

@@ -16,7 +16,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-9">
                                     <form enctype="multipart/form-data" method="POST" action="/{{$data->id}}/editArticel" role="form">
                                         {{ csrf_field() }}
                                         <div class="form-group">
@@ -26,17 +26,35 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori</label>
+                                            <?php $kat=$data->kategori; ?>
                                             <select name="kategori" class="form-control" style="width: 35%;">
+                                                @if ($kat==0)
                                                 <option value="0" selected="selected">General</option>
                                                 <option value="1">Desa Dete</option>
                                                 <option value="2">Desa Tiroau</option>
                                                 <option value="3">Desa Kulati</option>
+                                                @endif
+                                                @if ($kat==1)
+                                                <option value="0">General</option>
+                                                <option value="1" selected="selected">Desa Dete</option>
+                                                <option value="2">Desa Tiroau</option>
+                                                <option value="3">Desa Kulati</option>
+                                                @endif
+                                                @if ($kat==2)
+                                                <option value="0">General</option>
+                                                <option value="1">Desa Dete</option>
+                                                <option value="2" selected="selected">Desa Tiroau</option>
+                                                <option value="3">Desa Kulati</option>
+                                                @endif
+                                                @if ($kat==3)
+                                                <option value="0">General</option>
+                                                <option value="1">Desa Dete</option>
+                                                <option value="2">Desa Tiroau</option>
+                                                <option value="3" selected="selected">Desa Kulati</option>
+                                                @endif
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Penulis</label>
-                                            <input class="form-control" type="text" name="penulis" value="{{$data->penulis}}" placeholder="Kategori">
-                                        </div>
+                                        <input type="hidden" name="penulis" value="{{$data->penulis}}">
                                         <div class="form-group">
                                             <label>Gambar</label><br/>
                                             <label> <img src="{{url('/uploadgambar/artikels/'.$data->gambar)}}" style="width: 150px; height:150px;"> </label><br>
@@ -51,7 +69,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
-                                            <textarea name="content" class="form-control" rows="3">{{$data->isi}}</textarea>
+                                            <textarea name="content" class="form-control" rows="15">{{$data->isi}}</textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">Save Artikel</button>
                                         <input type="hidden" name="_method" value="PUT">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
 use App\artikel;
 use App\paket;
 use App\slider;
@@ -11,20 +13,18 @@ use App\fitur;
 use App\plan;
 use App\order;
 
-class ControllerAdmin extends Controller
+class cAdmin extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     public function index()
     {
         //Calonya dibuat Dasboard INI GAAAANNNN!!!!!
-        $siswa=artikel::all();
-        return view ('admin/viewArticel')
-        ->with ('data',$siswa)
-        ->with('no',1);
+        return view ('admin/addArticel');
     }
 
     /*Artikel-Artikel disini*/
@@ -32,7 +32,20 @@ class ControllerAdmin extends Controller
     {
         return view ('admin/addArticel');
     }
+    public function show($id)
+    {
+        $post = artikel::findOrFail($id);
+        return view('post.show', ['post' => $post]);
+    }
+    public function changeStatus() 
+    {
+        $id = Input::get('id');
+        $post = Post::findOrFail($id);
+        $post->is_published = !$post->is_published;
+        $post->save();
 
+        return response()->json($post);
+    }
 
     function inputArticel(Request $request)
     {
@@ -468,6 +481,20 @@ class ControllerAdmin extends Controller
             $plan->save();
             return redirect ('/plan');
         }
+    }
+    function tampilkan($id)
+    {
+        $art= artikel::find($id);
+        $art->tampilkan=1;
+        $art->save();
+        return redirect ('/articel');
+    }
+    function sembunyikan($id)
+    {
+        $art= artikel::find($id);
+        $art->tampilkan=0;
+        $art->save();
+        return redirect ('/articel');
     }
     //plan berakhir disini
     function pemesanan()

@@ -17,7 +17,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-9">
                                     <form enctype="multipart/form-data" method="POST" action="/inputArticel" role="form">
                                         {{ csrf_field() }}
                                         <div class="form-group">
@@ -34,10 +34,7 @@
                                                 <option value="3">Desa Kulati</option>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Penulis</label>
-                                            <input class="form-control" type="text" name="penulis" placeholder="Penulis">
-                                        </div>
+                                        <input type="hidden" name="penulis" value="{{ Auth::user()->name }}">
                                         <div class="form-group">
                                             <label>Gambar</label>
                                             <div class="">
@@ -53,7 +50,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Content</label>
-                                            <textarea name="content" class="form-control" rows="3"></textarea>
+                                            <textarea name="content" class="form-control" rows="15"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">Save Artikel</button>
                                         <button type="reset" class="btn btn-default">Reset Artikel</button>

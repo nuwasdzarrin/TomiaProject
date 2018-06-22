@@ -45,13 +45,14 @@
                                                 ?> </td>
                                         <td><img src="{{url('/uploadgambar/konfirmasi/'.$order->gambar)}}" style="width: 150px; height:150px;"></td>
                                         <td>
+                                            @if ($status==1)
                                             <form method="POST" action="{{$order->id}}/status">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="status" value="2">
-                                                <button type="submit" class="btn btn-warning">konfirmasi</button>
+                                                <button type="submit" class="btn btn-warning" style="margin-bottom: 5px;">konfirmasi</button>
                                                 <input type="hidden" name="_method" value="PUT">
                                             </form>
-
+                                            @endif
                                             <form method="POST" action="{{$order->id}}/delPemesanan">
                                                 {{csrf_field()}}
                                                 <input type="submit" name="delete" class="btn btn-danger" value="Delete">

@@ -60,7 +60,6 @@
                         <div><span>Artikel Terbaru</span></div>
                     </div>
                     @foreach ($latesArt as $latesArt)
-                    @if ($latesArt->id!=$terbaru->id && $no<6)
                     <div class="artikel-item col s12 m12 l12 row">
                         <div class="col s4 m4 l4">
                             <img class="gambar-artikel" src="{{ asset('uploadgambar/artikels/'.$latesArt->gambar) }}">
@@ -71,8 +70,6 @@
                             <p><?php echo substr($latesArt->isi, 0,50);?> ...</p>
                         </div>
                     </div>
-                    @endif
-                    <?php $no++ ?>
                     @endforeach
                 </div>
             </div>
@@ -81,9 +78,7 @@
                     <div class="kategori-artikel col s12 m12 l12 row">
                         <div><span>Artikel Populer</span></div>
                     </div>
-                    <?php $no=1;?>
                     @foreach ($populer as $populer)
-                    @if($no<5)
                     <div class="artikel-item col s12 m12 l12 row">
                         <div class="col s4 m4 l4">
                             <img class="gambar-artikel" src="{{ asset('uploadgambar/artikels/'.$populer->gambar) }}">
@@ -94,14 +89,12 @@
                             <p><?php echo substr($populer->isi, 0,50);?> ...</p>
                         </div>
                     </div>
-                    @endif
-                    <?php $no++ ?>
                     @endforeach
                 </div>
             </div>
         </div>
         <div class="center">
-            <a href="artikel/1" class="btn-default-effect">Lihat lebih banyak artikel</a>
+            <a href="{{URL::to('/artikel/1')}}" class="btn-default-effect">Lihat lebih banyak artikel</a>
         </div>
     </section>
 
@@ -123,7 +116,7 @@
             @endforeach
         </div>
         <div class="center">
-            <a href="galeris" class="btn-default-effect">Lihat galeri</a>
+            <a href="{{URL::to('/galeris/1')}}" class="btn-default-effect">Lihat galeri</a>
         </div>
     </section>
 
@@ -189,14 +182,14 @@
             <div class="deskripsi-peta col s12 m6 l6">
                 <h2>Destinasi<br/>Tomia Timur</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nisi facilis modi veniam inventore voluptatem corporis iure incidunt. Veritatis modi, distinctio perferendis deleniti explicabo minima molestiae ea hic temporibus provident.</p>
-                <a href="#" class="btn-default-effect waves-effect">Lihat Destinasi</a>
+                <a href="{{URL::to('destinasi')}}" class="btn-default-effect waves-effect">Lihat Destinasi</a>
             </div>
             <div class="gambar-peta col s12 m6 l6">
                 <img src="{{ asset('assetsnya/img/peta/main.svg') }}" alt="">
                 <div class="spot-pointer">
                     <div class="hotspot__positioner--01">
                         <div class="hotspot__container">
-                            <a href="#">
+                            <a href="{{URL::to('/peta/3')}}">
                                 <div class="hotspot hotspot--01"></div>
                                 <div class="hotspot hotspot--02"></div>
                             </a>
@@ -204,7 +197,7 @@
                     </div>   
                     <div class="hotspot__positioner--02">
                         <div class="hotspot__container">
-                            <a href="#">
+                            <a href="{{URL::to('/peta/2')}}">
                                 <div class="hotspot hotspot--01"></div>
                                 <div class="hotspot hotspot--02"></div>
                             </a>
@@ -220,7 +213,7 @@
                     </div>   
                     <div class="hotspot__positioner--04">
                         <div class="hotspot__container">
-                            <a href="#">
+                            <a href="{{URL::to('/peta/1')}}">
                                 <div class="hotspot hotspot--01"></div>
                                 <div class="hotspot hotspot--02"></div>
                             </a>

@@ -18,11 +18,7 @@
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/circlepoint.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsnya/styles/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsnya/styles/page-header.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsnya/styles/artikel.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsnya/styles/galeri.css') }}">
-    <!--  -->
-    
+        
 </head>
 <body>
     <nav class="sticky">
