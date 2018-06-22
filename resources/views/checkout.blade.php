@@ -33,8 +33,8 @@
             <div>
                 <div class="right-align">
                     <p>021-002-883</p>
-                    <p>admin@treasuretomiatimur.com</p>
-                    <p>treasuretomiatimur.com</p>
+                    <p>admin@exploretomiatimur.com</p>
+                    <p>exploretomiatimur.com</p>
                 </div>
                 <div class="right-align">
                     <p>Alamat</p>

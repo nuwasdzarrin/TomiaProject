@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Treasure Tomia Timur</title>
+    <title>Explore Tomia Timur</title>
 
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -23,7 +23,7 @@
 <body>
     <nav class="sticky">
         <div class="nav-wrapper">
-            <a href="{{URL::to('/')}}" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
+            <a href="{{URL::to('/')}}" class="brand-logo"><span class="blue-text-brand">Explore</span> Tomia Timur</a>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{URL::to('/#artikel')}}">Artikel</a></li>

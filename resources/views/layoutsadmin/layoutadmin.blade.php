@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Wisata Tomia - Admin Page</title>
+    <title>Explore Tomia Timur - Admin Page</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('adminassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Wisata Tomia</a>
+                <a class="navbar-brand" href="index.html">Admin Explore Tomia Timur</a>
             </div>
             <!-- /.navbar-header -->
 

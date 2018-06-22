@@ -147,8 +147,8 @@
                     <td><p style="font-size: 2em;margin-left:0;line-height: 1;">TOMIA TIMUR</p></td>
                     <td>
                         <p style="line-height: 1.5;margin-left: 100px;font-size: .9em;font-weight: 200;">021-002-883</p>
-                        <p style="line-height: 1.5;margin-left: 100px;font-size: .9em;font-weight: 200;">admin@treasuretomiatimur.com</p>
-                        <p style="line-height: 1.5;margin-left: 100px;font-size: .9em;font-weight: 200;">treasuretomiatimur.com</p>    
+                        <p style="line-height: 1.5;margin-left: 100px;font-size: .9em;font-weight: 200;">admin@exploretomiatimur.com</p>
+                        <p style="line-height: 1.5;margin-left: 100px;font-size: .9em;font-weight: 200;">exploretomiatimur.com</p>    
                     </td>
                     <td>
                         <p style="line-height: 1.5;margin: 0;font-size: .9em;font-weight: 200;">Alamat</p>
@@ -220,7 +220,7 @@
                     <?php
                     $status=$pesan->status; 
                     if ($status==0) echo "Silahkan Lakukan Pembayaran ke BNI A.N ....... <br>dengan jumlah sesuai dengan total Tagihan.
-                        <br>Setelah itu upload bukti pembayaran di: <a href='http://tomiaproject.oo/confirmation'>http://tomiaproject.oo/confirmation</a>"; 
+                        <br>Setelah itu upload bukti pembayaran di: <a href='http://exploretomiatimur.com/confirmation'>http://exploretomiatimur.com/confirmation</a>"; 
                     if ($status==1) echo "Tunggu Konfirmasi pembayaran dari Administrator";
                     if ($status==2) echo "Pembayaran Telah dikonfirmasi <br> invoice sebagai tiket perjalanan wisata anda";
                     ?>
