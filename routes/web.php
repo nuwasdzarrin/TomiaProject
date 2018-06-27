@@ -101,3 +101,13 @@ Route::get('/{id}/editArtikels', 'Cguest@editArticel');
 Route::put('/{id}/editArtikels', 'Cguest@updatetArticel');
 Route::post('/inputArtikels', 'Cguest@inputArticel');
 Route::delete('/{id}/delArtikels', 'Cguest@deleteArticel');
+
+Route::get('laravel-version', function()
+
+{
+
+$laravel = app();
+
+return "Your Laravel version is ".$laravel::VERSION;
+
+});
