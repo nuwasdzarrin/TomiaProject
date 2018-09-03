@@ -9,7 +9,6 @@ use App\artikel;
 
 class Cguest extends Controller
 {
-    //
     public function __construct()
     {
         $this->middleware('auth');
@@ -34,7 +33,9 @@ class Cguest extends Controller
         $namaFile = $gambar->getClientOriginalName();
         $request->file('gambar')->move('uploadgambar/artikels', $namaFile);
 
+        $kal=artikel::pluck('id')->count();
     	$siswa = new artikel($request->all());
+            $siswa->id = $kal+1;
     		$siswa->judul = $request->judul;
             $siswa->kategori = $request->kategori;
             $siswa->isi = $request->content;
@@ -48,6 +49,22 @@ class Cguest extends Controller
     {
         $siswa=artikel::find($id);
         $siswa->delete();
+        $kal=artikel::pluck('id')->count();
+        for ($i=$id;$i<=$kal;$i++) {
+            $res = artikel::find($i+1);
+            $res->id = $i;
+            $res->save();
+        }
+        $path = 'uploadgambar/artikels/'.$siswa->gambar;
+        if(file_exists($path)){
+            if(unlink($path)){
+                echo "<script>alert('Data berhasil dihapus!')</script>";
+            }else{
+                echo "<script>alert('Gagal Menghapus Data!')</script>";
+            }
+        }else{
+            echo "<script>alert('Tempat tidak ditemukan!')</script>";
+        }
         return redirect('/artikels');
     }
     function editArticel($id)
@@ -76,7 +93,6 @@ class Cguest extends Controller
             $siswa->save();
             return redirect ('/artikels');
         }else {
-            //echo "INI TIDAK";
             $siswa = artikel::find($id);
             $siswa->judul = $request->judul;
             $siswa->kategori = $request->kategori;

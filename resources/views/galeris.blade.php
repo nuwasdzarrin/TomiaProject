@@ -37,5 +37,14 @@
             <li class="waves-effect"><a href="@if($id<=($count/8)) {{ $id+1 }} @endif"><i class="material-icons">chevron_right</i></a></li>
         </ul>  
     </div>
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() { 
+            var elems = document.querySelectorAll('.sidenav'); 
+            var instances = M.Sidenav.init(elems, { 
+                edge: 'left', 
+                draggable: true 
+            }); 
+        }); 
+    </script>
 @endsection
     

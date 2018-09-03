@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         //tambahan buat Role
         'admin' => \App\Http\Middleware\Admin::class,
         'writer' => \App\Http\Middleware\Writer::class,
+        'd_admin' => \App\Http\Middleware\Dadmin::class,
     ];
 }

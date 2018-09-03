@@ -8,7 +8,7 @@ class order extends Model
 {
     protected $table = "orders";
     protected $fillable = [
-        'id_pembelian', 'id_paket', 'nama_pemesan','email','no_hp','jumlah','tgl_keberangkatan','status','gambar',
+        'id_pembelian', 'id_paket', 'desa', 'nama_pemesan','email','no_hp','jumlah','tgl_keberangkatan','status','gambar',
     ];
    	public function joinPaket()
     {

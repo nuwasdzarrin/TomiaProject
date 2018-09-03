@@ -1,0 +1,81 @@
+Dokumentasi website selama KKN
+
+exploretomiatimur.com
+==================================
+*localhost di laragon, tomiaproject
+
+Tomia Website
+slider siippp
+fitur   siipppp
+paket    siipp
+galeri   edit sama add belum apik
+artikel    siipp
+Panduan Wisata   admin belum bagus
+peta-peta
+fotter kontak
+
+daiserver:
+kkntomiatimur@gmail.com
+pass: H@ru55urp!u5
+DB:
+exploret_tomiadata
+user: tomiada
+pass: U7tX{oS-;-d.
+
+projecttomia@gmail.com
+pss: timurtomia
+
+admin buat 3 desa
+=============
+-middleware d_admin, sama kernelnya juga
+-artikel golongkan untuk 3 desa buat konfirmasi CRUD di update bagian pokdarwis. controller CA_desa, db artikel juga di update tambahkan kode desa.......v
+-begitu juga paket wisata............... DB order di ubah tambah desa.........v
+-kasih menu buat upload galeri.....v
+-slider kasih satu saja yang bisa di ubah untuk pokdarwis, DB slider tambahkan "kode desa".............v
+
+update 17/07/2018
+-style/index.css......v
+-style/nav.css.........v
+-role admin: input for id, function delete->artikel dan galeris dan paket. tujuam agar gambar tidak menumpuk di server dan id table bisa urut............v
+-role pokdarwis (CA_Desa): input for id, function delete->artikel dan galeris dan paket. tujuam agar gambar tidak menumpuk di server dan id table bisa urut.........v
+-role guess: input for id, function delete->artikel. tujuan agar gambar tidak menumpuk di server dan id table bisa urut..........v
+
+-dashboard pokdarwis siap.....v
+-add video untuk pokdarwis: db videos, model Video, pokdarwis controller, view crud video....v
+
+desadete-wakatobi.id
+=====================================
+email:
+projecttomia@gmail.com
+pss: timurtomia
+
+daiserver
+projecttomia@gmail.com
+pass: T0m!4&ugm2018
+user database
+db_name: desadete_dbdesa
+us: desadete_usdesa
+pss: *AUO8t-K&k3W
+desadete-wakatobi.id
+administrator
+user: admin
+pass: Perangkat2018
+detedesa@gmail.com
+
+SI_Desa
+Username: admin
+Password: sid304
+
+kulatiwakatobi.com
+==============================
+kulatiwakatobi@gmail.com
+pass: Desaklt2018
+pass dai: D35@Klt2018
+
+username db : kulatiwa_dbus
+pass db: !WX&}E$L0y*!
+db : kulatiwa_dbkulati
+
+siteman
+user : admin
+pass : Desaklt2018

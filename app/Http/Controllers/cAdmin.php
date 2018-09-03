@@ -54,28 +54,45 @@ class cAdmin extends Controller
         $namaFile = $gambar->getClientOriginalName();
         $request->file('gambar')->move('uploadgambar/artikels', $namaFile);
 
+        $kal=artikel::pluck('id')->count();
     	$siswa = new artikel($request->all());
-    		$siswa->judul = $request->judul;
+    		$siswa->id = $kal+1;
+            $siswa->judul = $request->judul;
             $siswa->kategori = $request->kategori;
             $siswa->isi = $request->content;
     		$siswa->penulis = $request->penulis;
     		$siswa->gambar = $namaFile;
     		
     	$siswa->save();
-    	return redirect ('/articel');
+        return redirect ('/articel');
     }
 
     function readArticel()
     {
         $siswa=artikel::latest()->get();
         return view ('admin/viewArticel')
-        ->with ('data',$siswa)
-        ->with('no',1);
+        ->with ('data',$siswa);
     }
     function deleteArticel($id)
-    {
+    {   
         $siswa=artikel::find($id);
         $siswa->delete();
+        $kal=artikel::pluck('id')->count();
+        for ($i=$id;$i<=$kal;$i++) {
+            $res = artikel::find($i+1);
+            $res->id = $i;
+            $res->save();
+        }
+        $path = 'uploadgambar/artikels/'.$siswa->gambar;
+        if(file_exists($path)){
+            if(unlink($path)){
+                echo "<script>alert('Data berhasil dihapus!')</script>";
+            }else{
+                echo "<script>alert('Gagal Menghapus Data!')</script>";
+            }
+        }else{
+            echo "<script>alert('Tempat tidak ditemukan!')</script>";
+        }
         return redirect('/articel');
     }
     function editArticel($id)
@@ -122,20 +139,20 @@ class cAdmin extends Controller
     {
         return view ('admin/addPaket');
     }
-
-
     function inputPaket(Request $request)
     {
+        $kal=paket::pluck('id')->count();
         $paket = new paket($request->all());
+            $paket->id = $kal+1;
             $paket->paket = $request->paket;
             $paket->fasilitas = $request->fasilitas;
             $paket->harga = $request->harga;
             $paket->deskripsi = $request->deskripsi;
+            $paket->desa = 0;
             
         $paket->save();
         return redirect ('/paket');
     }
-
     function readPaket()
     {
         $paket=paket::all();
@@ -147,6 +164,12 @@ class cAdmin extends Controller
     {
         $paket=paket::find($id);
         $paket->delete();
+        $kal=paket::pluck('id')->count();
+        for ($i=$id;$i<=$kal;$i++) {
+            $res = paket::find($i+1);
+            $res->id = $i;
+            $res->save();
+        }
         return redirect('/paket');
     }
     function editPaket($id)
@@ -163,6 +186,7 @@ class cAdmin extends Controller
             $paket->fasilitas = $request->fasilitas;
             $paket->harga = $request->harga;
             $paket->deskripsi = $request->deskripsi;
+            $paket->desa = 0;
             
             $paket->save();
             return redirect ('/paket');
@@ -245,8 +269,6 @@ class cAdmin extends Controller
     {
         return view ('admin/addGaleri');
     }
-
-
     function inputGaleri(Request $request)
     {
         $this->validate($request, ['gambar' => 'required|image']);
@@ -259,15 +281,16 @@ class cAdmin extends Controller
         $namaThumb = $thumbnail->getClientOriginalName();
         $request->file('thumbnail')->move('uploadgambar/galeris/thumbnail', $namaThumb);
 
+        $kal=galeri::pluck('id')->count();
         $galeri = new galeri($request->all());
+            $galeri->id = $kal+1;
             $galeri->gambar = $namaFile;
             $galeri->thumbnail = $namaThumb;
             $galeri->judul = $request->judul;
-                        
+            $galeri->desa = 0;
         $galeri->save();
         return redirect ('/galeri');
     }
-
     function readGaleri()
     {
         $galeri=galeri::latest()->get();
@@ -279,6 +302,33 @@ class cAdmin extends Controller
     {
         $galeri=galeri::find($id);
         $galeri->delete();
+        $kal=galeri::pluck('id')->count();
+        for ($i=$id;$i<=$kal;$i++) {
+            $res = galeri::find($i+1);
+            $res->id = $i;
+            $res->save();
+        }
+        $path = 'uploadgambar/galeris/'.$galeri->gambar;
+        if(file_exists($path)){
+            if(unlink($path)){
+                echo "<script>alert('Data berhasil dihapus!')</script>";
+            }else{
+                echo "<script>alert('Gagal Menghapus Data!')</script>";
+            }
+        }else{
+            echo "<script>alert('Tempat tidak ditemukan!')</script>";
+        }
+
+        $pat = 'uploadgambar/galeris/thumbnail'.$galeri->thumbnail;
+        if(file_exists($pat)){
+            if(unlink($pat)){
+                echo "<script>alert('Data berhasil dihapus!')</script>";
+            }else{
+                echo "<script>alert('Gagal Menghapus Data!')</script>";
+            }
+        }else{
+            echo "<script>alert('Tempat tidak ditemukan!')</script>";
+        }
         return redirect('/galeri');
     }
     function editGaleri($id)
@@ -306,7 +356,7 @@ class cAdmin extends Controller
             $galeri->gambar = $namaFile;
             $galeri->thumbnail = $namaThumb;
             $galeri->judul = $request->judul;
-                        
+            $galeri->desa = 0;
             $galeri->save();
             return redirect ('/galeri');
         }elseif ($request->options2=="option2"&&$request->options4!="option4") {
@@ -318,7 +368,7 @@ class cAdmin extends Controller
             $galeri = galeri::find($id);
             $galeri->gambar = $namaFile;
             $galeri->judul = $request->judul;
-                        
+            $galeri->desa = 0;
             $galeri->save();
             return redirect ('/galeri');
         }elseif ($request->options2!="option2"&&$request->options4=="option4") {
@@ -330,14 +380,14 @@ class cAdmin extends Controller
             $galeri = galeri::find($id);
             $galeri->thumbnail = $namaThumb;
             $galeri->judul = $request->judul;
-                        
+            $galeri->desa = 0;            
             $galeri->save();
             return redirect ('/galeri');
         }else {
             //echo "INI TIDAK";
             $galeri = galeri::find($id);
             $galeri->judul = $request->judul;
-                        
+            $galeri->desa = 0;            
             $galeri->save();
             return redirect ('/galeri');
         }
@@ -348,8 +398,6 @@ class cAdmin extends Controller
     {
         return view ('admin/addFitur');
     }
-
-
     function inputFitur(Request $request)
     {
         $this->validate($request, ['gambar' => 'required|image']);
@@ -365,7 +413,6 @@ class cAdmin extends Controller
         $fitur->save();
         return redirect ('/fitur');
     }
-
     function readFitur()
     {
         $fitur=fitur::all();
@@ -418,8 +465,6 @@ class cAdmin extends Controller
     {
         return view ('admin/addPlan');
     }
-
-
     function inputPlan(Request $request)
     {
         $this->validate($request, ['gambar' => 'required|image']);
@@ -435,7 +480,6 @@ class cAdmin extends Controller
         $plan->save();
         return redirect ('/plan');
     }
-
     function readPlan()
     {
         $plan=plan::all();

@@ -45,3 +45,16 @@ nav.sticky ul li a {
     font-size: 1em;
     line-height: 50px;
 }
+
+@media only screen and (max-width: 420px) { 
+    nav a.brand-logo { 
+        font-size: 14pt; 
+        font-size: 1.4em; 
+    } 
+} 
+ 
+@media only screen and (max-width: 800px) { 
+    nav a.brand-logo { 
+        font-size: 1.4em; 
+    } 
+}

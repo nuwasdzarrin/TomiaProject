@@ -22,11 +22,12 @@
                                         <div class="form-group">
                                             <label>Gambar</label>
                                             <input type="file" name="gambar">
+                                            <p class="help-block">*Maksimal 2mb </p>
                                         </div>
                                         <div class="form-group">
                                             <label>Thumbnail</label>
                                             <input type="file" name="thumbnail">
-                                            <p class="help-block">*gambar dalam ukuran kecil</p>
+                                            <p class="help-block">*gambar dalam ukuran kecil, maksimal size 2mb</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Judul</label>

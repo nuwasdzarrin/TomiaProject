@@ -23,6 +23,7 @@ class CF_invoice extends Controller
                 $pesanan=$order->id_pembelian;
             $order->id_paket=$request->booking;
                 $id_packet=$request->booking;
+            $order->desa = $request->desa;
             $order->nama_pemesan = $request->nama;
             $order->email = $request->email;
             $order->no_hp = $request->noTelp;
@@ -70,7 +71,6 @@ class CF_invoice extends Controller
     {
         $pesan=order::where('id_pembelian','=',$idsan)->first();
         $paket=paket::where('id','=',$idpak)->first();
-        /*return view('invoic');*/
         $pdf= PDF::loadView ('/invoic',compact('pesan','paket'));
         return $pdf->download($pesan->id_pembelian.$pesan->nama_pemesan.date("Ymd").'.pdf');
         //stream buat ngeview gak langsung download\
@@ -104,5 +104,17 @@ class CF_invoice extends Controller
         {
             return redirect('/confirmation')->with('message', 'Kode Booking Salah atau Belum Di_Isi');
         }
+    }
+    //Load Cari Tagihan
+    function tagihan()
+    {
+        return view ('load-inv');
+    }
+    //post Search Tagihan
+    function searchInv(Request $req)
+    {
+        $idsan=$req->id_pembelian;
+        $idpak=$req->id_paket;
+        return redirect ('invoice/'.$idsan.'/'.$idpak);
     }
 }

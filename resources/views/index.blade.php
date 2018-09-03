@@ -28,16 +28,20 @@
         </div> 
     </section>
 
-    <section id="shortcut" class="container js--section-features">
+    <section id="rencana-wisata" class="center">
+        <div class="container">
         <div class="row horizontal-list">
             <!--php untuk fitur-->
             @foreach ($fitur as $fitur)
             <div class="col s12 m3 l3 center">
-                <img src="{{ asset('uploadgambar/icons/'.$fitur->gambar) }}">
-                <h5>{{$fitur->judul}}</h5>
+                <div>
+                    <img src="{{ asset('uploadgambar/icons/'.$fitur->gambar) }}">
+                    <h5>{{$fitur->judul}}</h5>
+                </div>
                 <p>{{$fitur->deskripsi}}</p>
             </div>
             @endforeach
+        </div>
         </div>
     </section>
 
@@ -122,21 +126,20 @@
 
     <section id="rencana-wisata" class="center">
         <div class="container">
-            <h2>Rencanakan Wisata Anda</h2>
+            <h2>Video</h2>
             <div class="row horizontal-list">
-                <!--php untuk plan-->
-                @foreach ($plan as $plan)
-                <div class="col s12 m4 l4 center">
-                    <img src="{{ asset('uploadgambar/icons/'.$plan->gambar) }}">
-                    <h5>{{$plan->judul}}</h5>
-                    <p>{{$plan->deskripsi}}</p>
+                <div class="col s12 m1 l4 center"></div>
+                <div class="col s12 m10 l4 center">
+                    <div>
+                        <iframe width="800" height="400" src="{{$video->video}}" frameborder="2" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                 </div>
-                @endforeach
+                <div class="col s12 m1 l4 center"></div>
             </div>
-            <a href="#" class="btn-default-effect btn-inverse">Rencanakan Lebih Lanjut</a>
+            <a href="https://www.youtube.com/channel/UCzQ_VCZY4_Bnw5FFXiSC_rQ" class="btn-default-effect btn-inverse">Channel Youtube Kami</a>
         </div>
     </section>
-    
+
     <div id="paket-wisata" class="center">
         <div class="container">
             <h2>Paket Wisata</h2>
@@ -177,16 +180,6 @@
         </div>
     </div>
 
-    <section id="rencana-wisata" class="center">
-        <div class="container">
-            <h2>Video</h2>
-            <div class="row horizontal-list">
-                <iframe width="978" height="550" src="https://www.youtube.com/embed/WmR0HWZi2_I" frameborder="2" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <a href="https://www.youtube.com/channel/UCzQ_VCZY4_Bnw5FFXiSC_rQ" class="btn-default-effect btn-inverse">Kunjungi Channel Kami di Youtube</a>
-        </div>
-    </section>
-
     <div id="peta">
         <div class="container row">
             <div class="deskripsi-peta col s12 m6 l6">
@@ -194,7 +187,7 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nisi facilis modi veniam inventore voluptatem corporis iure incidunt. Veritatis modi, distinctio perferendis deleniti explicabo minima molestiae ea hic temporibus provident.</p>
                 <a href="{{URL::to('destinasi')}}" class="btn-default-effect waves-effect">Lihat Destinasi</a>
             </div>
-            <div class="gambar-peta col s12 m6 l6">
+            <div class="gambar-peta hide-on-med-and-down col s12 m6 l6">
                 <img src="{{ asset('assetsnya/img/peta/main.svg') }}" alt="">
                 <div class="spot-pointer">
                     <div class="hotspot__positioner--01">
@@ -249,5 +242,30 @@
             </div>
         </div>
     </div>
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() { 
+            var elems = document.querySelectorAll('.sidenav'); 
+            var instances = M.Sidenav.init(elems, { 
+                edge: 'left', 
+                draggable: true 
+            }); 
+        }); 
+ 
+        let listPaket = new Array(); 
+        let listPaketHeight = new Array(); 
+        let deskripsiPaket = document.querySelectorAll(".deskripsi-paket"); 
+ 
+        for (let i = 1; i < deskripsiPaket.length; i+=3) { 
+            listPaket.push(deskripsiPaket[i]); 
+            listPaketHeight.push(deskripsiPaket[i].clientHeight); 
+        } 
+ 
+        listPaketHeight.sort(); 
+        let maxHeight = listPaketHeight[listPaketHeight.length - 1]; 
+ 
+        for (let paket of listPaket) { 
+            paket.style.height = maxHeight + 'px'; 
+        }             
+    </script>
 
 @endsection

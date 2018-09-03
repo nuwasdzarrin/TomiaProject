@@ -23,7 +23,7 @@
                                         <div class="form-group">
                                             <label>Judul</label>
                                             <input class="form-control" type="text" name="judul">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                            
                                         </div>
                                         <div class="form-group">
                                             <label>Kategori</label>
@@ -37,6 +37,7 @@
                                         <input type="hidden" name="penulis" value="{{ Auth::user()->name }}">
                                         <div class="form-group">
                                             <label>Gambar</label>
+                                            <p class="help-block">*Maksimal 2mb </p>
                                             <div class="">
                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                     <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="assets/img/demoUpload.jpg" alt="" /></div>

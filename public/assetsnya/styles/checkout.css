@@ -164,3 +164,10 @@ form input[type=submit] {
     background-position: center;
     background-size: cover;
 }
+
+@media only screen and (max-width: 800px) { 
+    main.row { 
+        padding-left: 0px !important; 
+        padding-right: 0px !important; 
+    } 
+}

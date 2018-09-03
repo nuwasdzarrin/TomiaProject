@@ -24,30 +24,33 @@
     <nav class="sticky">
         <div class="nav-wrapper">
             <a href="{{URL::to('/')}}" class="brand-logo"><span class="blue-text-brand">Explore</span> Tomia Timur</a>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
+            <ul class="right hide-on-med-and-down">
                 <li><a href="{{URL::to('/#artikel')}}">Artikel</a></li>
                 <li><a href="{{URL::to('/#galeri')}}">Galeri</a></li>
-                <li><a href="{{URL::to('/#rencana-wisata')}}">Rencana Wisata</a></li>
+                <!-- <li><a href="{{URL::to('/#rencana-wisata')}}">Rencana Wisata</a></li> -->
                 <li><a href="{{URL::to('/#paket-wisata')}}">Paket Wisata</a></li>
                 <li><a href="{{URL::to('/#peta')}}">Destinasi Wisata</a></li>
+                
             </ul>
         </div>
     </nav>
 
+     <ul class="sidenav" id="mobile-demo"> 
+        <li><a href="{{URL::to('/#artikel')}}">Artikel</a></li> 
+        <li><a href="{{URL::to('/#galeri')}}">Galeri</a></li> 
+        <li><a href="{{URL::to('/#rencana-wisata')}}">Rencana Wisata</a></li> 
+        <li><a href="{{URL::to('/#paket-wisata')}}">Paket Wisata</a></li> 
+        <li><a href="{{URL::to('/#peta')}}">Destinasi Wisata</a></li> 
+    </ul>
     @yield('content')
 
     <footer>
         <div class="about-footer row hide-on-med-and-down">
             <div class="col m4 l4">
-                <a href="#" class="brand-logo"><span class="blue-text-brand">Treasure</span> Tomia Timur</a>
-                <h5>Tentang Treasure Tomia Timur</h5>
+                <a href="#" class="brand-logo"><span class="blue-text-brand">Explore</span> Tomia Timur</a>
+                <h5>Tentang Explore Tomia Timur</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, commodi voluptatem nobis obcaecati eligendi sed qui, inventore quasi assumenda dignissimos rem ipsa rerum! Iure nesciunt necessitatibus alias, non provident eius.</p>
-                <div class="grey-text text-lighten-1 social-media">
-                    <a href="#"><i class="ion-large ion-social-facebook"></i></a>
-                    <a href="#"><i class="ion-large ion-social-twitter"></i></a>
-                    <a href="#"><i class="ion-large ion-social-instagram"></i></a>
-                </div>
             </div>
             <div class="col m4 l4">
                 <div class="container">
@@ -71,6 +74,11 @@
                 <div>
                     Telepon: <br/>
                     <i class="ion-small ion-chevron-right"></i> (022) 222222
+                </div>
+                <div class="grey-text text-lighten-1 social-media">
+                    <a href="#"><i class="ion-large ion-social-facebook"></i></a>
+                    <a href="#"><i class="ion-large ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-large ion-social-instagram"></i></a>
                 </div>
             </div>
         </div>

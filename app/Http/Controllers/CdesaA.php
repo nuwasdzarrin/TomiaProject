@@ -11,6 +11,7 @@ use App\galeri;
 
 class CdesaA extends Controller
 {
+    /*for menu maps*/
     public function __construct()
     {
         $this->middleware('auth');

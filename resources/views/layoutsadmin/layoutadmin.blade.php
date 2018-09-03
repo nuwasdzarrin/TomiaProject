@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Explore Tomia Timur - Admin Page</title>
+    <title>Explore Tomia Timur - SuperAdmin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('adminassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Explore Tomia Timur</a>
+                <a class="navbar-brand" href="index.html">SuperAdmin exploretomiatimur</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -85,15 +85,7 @@
                                 
                             </li>
                         @endguest
-                        <!--
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    -->
+                        
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>

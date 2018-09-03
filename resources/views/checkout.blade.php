@@ -108,15 +108,13 @@
                 <p><?php
                         $status=$pesan->status; 
                         if ($status==0) echo "Silahkan Lakukan Pembayaran ke BNI A.N ....... <br>dengan jumlah sesuai dengan total Tagihan.
-                            <br>Setelah itu upload bukti pembayaran di: <a href='http://tomiaproject.oo/confirmation'>http://tomiaproject.oo/confirmation</a> <?php "; 
+                            <br>Setelah itu upload bukti pembayaran di: <a href='http://tomiaproject.oo/confirmation'>http://exploretomiatimur.com/confirmation</a> <?php "; 
                     if ($status==1) echo "Tunggu Konfirmasi pembayaran dari Administrator";
                     if ($status==2) echo "Pembayaran Telah dikonfirmasi <br> Anda dapat mencetak invoice ini sebagai tiket perjalanan";
                     ?></p>
-                <!-- <p>Mohon melakukan pembayaran terlebih dahulu untuk mencetak kartu</p> -->
             </div>
             <div>
-                @if ($status==2)<a href="{{URL::to($link)}}" class="cetak-kartu">Cetak</a>
-                @endif
+                <a href="{{URL::to($link)}}" class="cetak-kartu">Cetak</a>
             </div>
         </div>
     </div>

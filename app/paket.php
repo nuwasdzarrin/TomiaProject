@@ -8,6 +8,6 @@ class paket extends Model
 {
     protected $table = "pakets";
     protected $fillable = [
-        'paket', 'fasilitas', 'harga','deskripsi',
+        'paket', 'fasilitas', 'harga','deskripsi','desa',
     ];
 }

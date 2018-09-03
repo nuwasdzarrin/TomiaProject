@@ -8,6 +8,6 @@ class galeri extends Model
 {
     protected $table = "galeris";
     protected $fillable = [
-        'gambar', 'thumbnail', 'judul',
+        'gambar', 'thumbnail', 'judul','desa',
     ];
 }

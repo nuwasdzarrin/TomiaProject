@@ -55,6 +55,7 @@
                         <label for="nama">Tanggal Keberangkatan</label>
                         <input type="date" name="date" id="date" placeholder="date">
                     </div>
+                    <input type="hidden" name="desa" value="{{$paket->desa}}">
                 </div>
                 <input type="submit" value="Pesan">
             </form>
